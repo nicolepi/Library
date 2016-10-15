@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +11,13 @@ namespace LibraryAPI
     /// Definition of a book
     /// </summary>
     
-    class Book
+    public class Book
     {
         #region Properties 
         /// <summary>
         /// ISBN of the book
         /// </summary>
+        [Key] //mark this as a primary key in the database table
         public int ISBN { get; set; }
         public string Title { get; set; }
         public DateTime PublishedYear { get; set; }
@@ -23,9 +25,11 @@ namespace LibraryAPI
         public int Count { get; set; }
 
 
+
         #endregion
 
-        #region Methods
+        #region Methods 
+        //there's a hidden Book constructor
         public void Checkout()
         {
             Count--; //Count = Count - 1;

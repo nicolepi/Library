@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryAPI
 {
-    static class Library
+    public static class Library
     {
         #region Properties
 
@@ -28,7 +28,13 @@ namespace LibraryAPI
         #region Methods
         public static void AddBook(Book book)
         {
-            Books.Add(book);
+            using(var model = new LibraryModel())//make a connection to database
+            {
+                model.Books.Add(book); //go to the database find the table Books and add a book
+                model.SaveChanges();
+            }
+
+           
         }
         public static void PrintBooks()
         {
