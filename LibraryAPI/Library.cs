@@ -12,37 +12,33 @@ namespace LibraryAPI
 
         public static string Name { get; set; }
         public static string Address { get; set; }
-        /// <summary>
-        /// Collection of books
-        /// </summary>
-        public static List<Book> Books { get; set; }
-
+        
         #endregion
-        #region Constructors
-        //constructor is a special method
-        static Library()
-        {
-            Books = new List<Book>();
-        }
-        #endregion
+        //delete book property and constructor
         #region Methods
         public static void AddBook(Book book)
         {
-            using(var model = new LibraryModel())//make a connection to database
+            using(var model = new LibraryModel())//open a connection to the database
             {
+                //model is the connection
                 model.Books.Add(book); //go to the database find the table Books and add a book
-                model.SaveChanges();
+                model.SaveChanges(); //save the changes
             }
+            //using is for closing connection
 
            
         }
         public static void PrintBooks()
         {
-            foreach (var book in Books) // var is a variable
+            using (var model = new LibraryModel())
             {
-                Console.WriteLine("Title: {0}, ISBN: {1}, Price: {2}, Published: {3}", // {} are place holders
-                    book.Title, book.ISBN, book.Price, book.PublishedYear); // things to fill in place holders
+                foreach (var book in model.Books) // var is a variable 
+                {
+                    Console.WriteLine("Title: {0}, ISBN: {1}, Price: {2}, Published: {3}", // {} are place holders
+                        book.Title, book.ISBN, book.Price, book.PublishedYear); // things to fill in place holders
+                }
             }
+               
         }
         #endregion
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,16 @@ namespace LibraryAPI
         public decimal Price { get; set; }
         public int Count { get; set; }
 
+        //
+        [ForeignKey("Author")]//Author should matach table name, tell entiry framework not to create column
+        public int AuthorId { get; set; }//foreign key
+
+        //create one to many relationship
+        public virtual Author Author { get; set; } 
+        //virtual: virtual relationship, not physically present in Book class
+        //the first Author is the table 
+        //the second Author is the name of the column
+        //created internally by entity framework
 
 
         #endregion
