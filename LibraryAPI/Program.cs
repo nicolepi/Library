@@ -10,23 +10,53 @@ namespace LibraryAPI
     {
         static void Main(string[] args)
         {
-            //var book = new Book(); //new key word calls a constructor to allocate space for Book
-            //book.Title = "Intro to CS";
-            //book.ISBN = 1234567;
-            //book.Price = 12.34M;
-            //book.Count = 5;
-            //book.PublishedYear = new DateTime(2010, 1, 1);
+            Console.WriteLine("Welcome to my Library!");
+            int choice = -1; //create an output parameter to be used below in while and out parameter
+            bool invalidChoice = false;
+            while (choice != 0 || invalidChoice)
+            {
+                Console.WriteLine("1. Add a book to the library.");
+                Console.WriteLine("2. Rent a book from the Library");
+                Console.WriteLine("3. Return a book.");
+                Console.WriteLine("0. Exit.");
+                Console.Write("Please choose an option: ");
+                var input = Console.ReadLine();
+                //convert input from string to int
 
-            //Library.AddBook(book);
+                if (!int.TryParse(input, out choice))
+                {
+                    invalidChoice = true;
+                    Console.WriteLine("Invalid choice, try again...");
+                    continue;
+                }
+                invalidChoice = false; //resest it when it didn't go thru if condition
+                switch (choice)
+                {
+                    case 1:
+                        Console.Write("Title: ");
+                        var title = Console.ReadLine();
+                        Console.Write("Price: ");
+                        decimal price;
+                        if(!decimal.TryParse(Console.ReadLine(), out price))
+                            return;
+                        var book = new Book();
+                        book.Title = title;
+                        book.Price = price;
+                        book.PublishedYear = DateTime.Now;
+                        book.AuthorId = 1;
+                        Library.AddBook(book);                 
 
-            //book = new Book(); // reuse the book to save memory
-            //book.Title = "Intro to C#";
-            //book.ISBN = 1234534367;
-            //book.Price = 50.34M;
-            //book.Count = 10;
-            //book.PublishedYear = new DateTime(2010, 1, 1);
-
-            //Library.AddBook(book);
+                        break;
+                    case 2:
+                        
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
 
             Library.PrintBooks();
         }
