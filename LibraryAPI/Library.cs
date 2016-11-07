@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace LibraryAPI
 {
+    public enum RentalTypes
+    {
+        Book,
+        Audio,
+        Video
+    }
     public static class Library
     {
         #region Properties
