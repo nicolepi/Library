@@ -6,13 +6,14 @@ using System.Web.Mvc;
 
 namespace LibraryUI.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : Controller //HomeController is a type of Controller
     {
-        public ActionResult Index()
+        public ActionResult Index() //ActionResult is the return type, translate to html and javascript
         {
-            return View();
+            return View(); //map html page that matches homecontroller
         }
 
+        
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

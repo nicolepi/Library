@@ -16,7 +16,6 @@ D:\GitHub\LibraryAPI\LibraryUI\bin\LibraryUI.pdb
 D:\GitHub\LibraryAPI\LibraryUI\bin\Antlr3.Runtime.dll
 D:\GitHub\LibraryAPI\LibraryUI\bin\EntityFramework.dll
 D:\GitHub\LibraryAPI\LibraryUI\bin\EntityFramework.SqlServer.dll
-D:\GitHub\LibraryAPI\LibraryUI\bin\LibraryAPI.exe
 D:\GitHub\LibraryAPI\LibraryUI\bin\Microsoft.AspNet.Identity.Core.dll
 D:\GitHub\LibraryAPI\LibraryUI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\GitHub\LibraryAPI\LibraryUI\bin\Microsoft.AspNet.Identity.Owin.dll
@@ -69,3 +68,4 @@ D:\GitHub\LibraryAPI\LibraryUI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\GitHub\LibraryAPI\LibraryUI\obj\Debug\LibraryUI.csprojResolveAssemblyReference.cache
 D:\GitHub\LibraryAPI\LibraryUI\obj\Debug\LibraryUI.dll
 D:\GitHub\LibraryAPI\LibraryUI\obj\Debug\LibraryUI.pdb
+D:\GitHub\LibraryAPI\LibraryUI\bin\LibraryAPI.dll
